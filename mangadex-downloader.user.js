@@ -12,9 +12,9 @@
 // @grant        GM.setValue
 // @grant        GM.getValue
 // @grant	     GM_addStyle
-// @namespace https://greasyfork.org/users/821816
-// @downloadURL https://update.greasyfork.org/scripts/433394/MangaDex%20Downloader.user.js
-// @updateURL https://update.greasyfork.org/scripts/433394/MangaDex%20Downloader.meta.js
+// @namespace    https://greasyfork.org/users/821816
+// @updateURL    https://github.com/NO-ob/mangadex-scripts/raw/master/mangadex-downloader.user.js
+// @downloadURL  https://github.com/NO-ob/mangadex-scripts/raw/master/mangadex-downloader.user.js
 // ==/UserScript==
 //Required to retrieve iso_codes
 
@@ -213,9 +213,7 @@ function addDownloadButtons() {
             if (chapterRow.href.startsWith("https://mangadex.org/chapter")) {
                 let chapterID = chapterRow.href.split('/').pop();
                 let dlButton = document.createElement("button");
-                // let mangaID = document.URL.includes("/title/") ? document.querySelector("a.group.flex.items-start").getAttribute("to").split("/")[2] : chapterRow.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.querySelector("a.chapter-feed__title").href.split("/")[4];
                 let mangaID = document.URL.split('/')[4];
-                // console.log(document.URL.split('/'));
                 dlButton.innerHTML = "Download";
                 dlButton.setAttribute("class", "dlButton");
                 dlButton.setAttribute("id", "dl-" + chapterID);
